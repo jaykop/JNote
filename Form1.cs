@@ -15,6 +15,7 @@ namespace JNote
         public MainForm()
         {
             InitializeComponent();
+            this.Text = "JNote - New";
         }
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
@@ -121,19 +122,30 @@ namespace JNote
             {
                 System.IO.StreamReader sr = new System.IO.StreamReader(ofd.FileName);
                 MainTextBox.Text = sr.ReadToEnd();
+                this.Text = "JNote - " + ofd.FileName;
                 sr.Close();
             }
         }
 
         private void saveToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            SaveFileDialog sfd = new SaveFileDialog();
-            sfd.Filter = "Text files (.txt)|*.txt";
-            sfd.Title = "Save the file...";
-
-            if (sfd.ShowDialog() == DialogResult.OK)
+            if (this.Text == "JNote - New")
             {
-                System.IO.StreamWriter sw = new System.IO.StreamWriter(sfd.FileName);
+                SaveFileDialog sfd = new SaveFileDialog();
+                sfd.Filter = "Text files (.txt)|*.txt";
+                sfd.Title = "Save the file...";
+
+                if (sfd.ShowDialog() == DialogResult.OK)
+                {
+                    System.IO.StreamWriter sw = new System.IO.StreamWriter(sfd.FileName);
+                    sw.Write(MainTextBox.Text);
+                    this.Text = "JNote - " + sfd.FileName;
+                    sw.Close();
+                }
+            }
+            else
+            {
+                System.IO.StreamWriter sw = new System.IO.StreamWriter(MainMenuStrip.Name);
                 sw.Write(MainTextBox.Text);
                 sw.Close();
             }
@@ -141,13 +153,38 @@ namespace JNote
 
         private void saveAsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            // todo
+            SaveFileDialog sfd = new SaveFileDialog();
+            sfd.Filter = "All files (.*)|*.*";
+            sfd.Title = "Save the file as...";
+
+            if (sfd.ShowDialog() == DialogResult.OK)
+            {
+                System.IO.StreamWriter sw = new System.IO.StreamWriter(sfd.FileName);
+                sw.Write(MainTextBox.Text);
+                this.Text = "JNote - " + sfd.FileName;
+                sw.Close();
+            }
         }
 
         private void findToolStripMenuItem_Click(object sender, EventArgs e)
         {
             // todo
             // MainTextBox.Find();
+        }
+
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void replaceToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
