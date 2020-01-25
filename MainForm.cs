@@ -12,10 +12,17 @@ namespace JNote
 {
     public partial class MainForm : Form
     {
+        private UndoRedoStack urStack;
+
         public MainForm()
         {
             InitializeComponent();
             this.Text = "JNote - New";
+            
+            urStack = new UndoRedoStack();
+            urStack.FirstPush(MainTextBox.Text);
+            undoToolStripMenuItem.Enabled = false;
+            redoToolStripMenuItem.Enabled = false;
         }
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
@@ -44,25 +51,15 @@ namespace JNote
             MessageBoxIcon.Information);
         }
 
-        private void undoToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            MainTextBox.Undo();
-            undoToolStripMenuItem.Enabled = false;
-            redoToolStripMenuItem.Enabled = true;
-        }
-
-        private void redoToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            MainTextBox.Redo();
-            undoToolStripMenuItem.Enabled = true;
-            redoToolStripMenuItem.Enabled = false;
-        }
-
         private void MainTextBox_TextChanged(object sender, EventArgs e)
         {
+            urStack.Push(MainTextBox.Text);
+
+            undoToolStripMenuItem.Enabled = urStack.UndoCount > 1;
+            redoToolStripMenuItem.Enabled = urStack.RedoCount > 0;
+
             if (MainTextBox.Text.Length > 0)
             {
-                undoToolStripMenuItem.Enabled = true;
                 cutToolStripMenuItem.Enabled = true;
                 copyToolStripMenuItem.Enabled = true;
                 selectAllToolStripMenuItem.Enabled = true;
@@ -72,9 +69,28 @@ namespace JNote
                 selectAllToolStripMenuItem.Enabled = false;
                 cutToolStripMenuItem.Enabled = false;
                 copyToolStripMenuItem.Enabled = false;
-                undoToolStripMenuItem.Enabled = false;
-                redoToolStripMenuItem.Enabled = false;
             }
+
+        }
+
+        private void undoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            // simple Undo
+            //MainTextBox.Undo();
+            //undoToolStripMenuItem.Enabled = false;
+            //redoToolStripMenuItem.Enabled = true;
+
+            MainTextBox.Text = urStack.Undo(MainTextBox.Text);
+        }
+
+        private void redoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            // simple Redo
+            //MainTextBox.Redo();
+            //undoToolStripMenuItem.Enabled = true;
+            //redoToolStripMenuItem.Enabled = false;
+
+            MainTextBox.Text = urStack.Redo(MainTextBox.Text);
         }
 
         private void cutToolStripMenuItem_Click(object sender, EventArgs e)
