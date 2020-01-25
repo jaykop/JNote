@@ -14,7 +14,7 @@ namespace JNote
         {
             Rectangle rc = new Rectangle(Point.Empty, e.Item.Size);
             e.Item.ForeColor = Color.White;
-            Color c = e.Item.Selected ? Color.DarkGray : Color.Black;
+            Color c = e.Item.Selected ? Color.DarkRed : Color.Black;
             using (SolidBrush brush = new SolidBrush(c))
                 e.Graphics.FillRectangle(brush, rc);
         }

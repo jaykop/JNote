@@ -3,27 +3,28 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace JNote
 {
     public class UndoRedoStack
     {
-        private Stack<string> _Undo;
-        private Stack<string> _Redo;
+        private Stack<string> undo, redo;
+        private Stack<int> p_undo, p_redo;
         private bool undoing, redoing;
 
         public int UndoCount
         {
             get
             {
-                return _Undo.Count;
+                return undo.Count;
             }
         }
         public int RedoCount
         {
             get
             {
-                return _Redo.Count;
+                return redo.Count;
             }
         }
 
@@ -34,31 +35,42 @@ namespace JNote
         }
         public void Reset()
         {
-            _Undo = new Stack<string>();
-            _Redo = new Stack<string>();
+            undo = new Stack<string>();
+            redo = new Stack<string>();
+            p_undo = new Stack<int>();
+            p_redo = new Stack<int>();
         }
 
-        public string Do(string input)
-        {
-            _Undo.Push(input); // add new input to undo on the stack
-            _Redo.Clear(); // Once we issue a new command, the redo stack clears
-            return input;
-        }
+        //public string Do(string input)
+        //{
+        //    undo.Push(input); // add new input to undo on the stack
+        //    redo.Clear(); // Once we issue a new command, the redo stack clears
+        //    return input;
+        //}
 
         // return the final content to undo
-        public string Undo(string input)
+        public string Undo(string input, ref int sStart)
         {
             // from the undo stack
-            if (_Undo.Count > 1)
+            if (undo.Count > 1)
             {
                 undoing = true;
 
                 // setup undo/redo stack
-                string pop = _Undo.Pop();
-                string output = _Undo.First();
-                if (_Redo.Count == 0 
-                    || _Redo.First() != pop)
-                    _Redo.Push(pop);
+                string pop = undo.Pop();
+                string output = undo.First();
+                if (redo.Count == 0 
+                    || redo.First() != pop)
+                    redo.Push(pop);
+
+                // setup text cursor
+                int p_pop = p_undo.Pop();
+                int p_output = p_undo.First();
+                if (p_redo.Count == 0
+                    || p_redo.First() != p_pop)
+                    p_redo.Push(p_pop);
+
+                sStart = p_output;
 
                 // return output
                 return output;
@@ -66,25 +78,34 @@ namespace JNote
 
             else
             {
-                _Undo.Clear();
+                p_undo.Clear();
+                undo.Clear();
                 undoing = false;
                 return input;
             }
         }
 
         // return the final content to redo
-        public string Redo(string input)
+        public string Redo(string input, ref int sStart)
         {
             // from the redo stack
-            if (_Redo.Count > 0)
+            if (redo.Count > 0)
             {
                 redoing = true;
 
                 // setup undo/redo stack
-                string output = _Redo.Pop();
-                if (_Undo.Count == 0
-                    || _Undo.First() != input)
-                    _Undo.Push(input);
+                string output = redo.Pop();
+                if (undo.Count == 0
+                    || undo.First() != input)
+                    undo.Push(input);
+
+                // setup text cursor
+                int p_output = p_redo.Pop();
+                if (p_undo.Count == 0
+                    || p_undo.First() != sStart)
+                    p_undo.Push(sStart);
+
+                sStart = p_output;
 
                 // return output
                 return output;
@@ -97,48 +118,57 @@ namespace JNote
             }
         }
 
-        public void FirstPush(string input)
+        public void FirstPush(ref RichTextBox textBox)
         {
-            _Undo.Push(input);
+            undo.Push(textBox.Text);
+            p_undo.Push(textBox.SelectionStart);
         }
 
-        public void Push(string input)
+        public void Push(ref RichTextBox textBox, int sStart)
         {
             if (!redoing && !undoing
-                && _Undo.First() != input)
+                && undo.First() != textBox.Text)
             {
-                _Undo.Push(input);
-                _Redo.Clear(); // Anytime we push a new command, the redo stack clears
+                undo.Push(textBox.Text);
+                p_undo.Push(textBox.SelectionStart);
+                redo.Clear(); // Anytime we push a new command, the redo stack clears
+            }
+            else
+            {
+                textBox.SelectionStart = sStart;
+                textBox.SelectionLength = 0;
+                textBox.Select();
             }
 
             redoing = undoing = false;
         }
 
-        public string UnPush()
-        {
-            if (_Undo.Count > 0)
-            {
-                string pop = _Undo.Pop();
-                _Redo.Push(pop);
-                return pop;
-            }
-            else
-            {
-                return null;
-            }
-        }
-        public string RePush()
-        {
-            if (_Redo.Count > 0)
-            {
-                string pop = _Redo.Pop();
-                _Undo.Push(pop);
-                return pop;
-            }
-            else
-            {
-                return null;
-            }
-        }
+        //public string UnPush()
+        //{
+        //    if (undo.Count > 0)
+        //    {
+        //        string pop = undo.Pop();
+        //        redo.Push(pop);
+        //        return pop;
+        //    }
+        //    else
+        //    {
+        //        return null;
+        //    }
+        //}
+        //public string RePush()
+        //{
+        //    if (redo.Count > 0)
+        //    {
+        //        string pop = redo.Pop();
+        //        undo.Push(pop);
+        //        return pop;
+        //    }
+        //    else
+        //    {
+        //        return null;
+        //    }
+        //}
+
     }
 }

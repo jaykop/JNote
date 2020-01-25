@@ -13,17 +13,24 @@ namespace JNote
     public partial class MainForm : Form
     {
         private UndoRedoStack urStack;
+        private int cursorPos;
 
         public MainForm()
         {
             InitializeComponent();
+            
+            // note title
             this.Text = "JNote - New";
+
+            //restore
+            cursorPos = MainTextBox.SelectionStart;
 
             // assign custom renderer
             menuStrip1.Renderer = new MenuRenderer();
 
+            // redo/undo
             urStack = new UndoRedoStack();
-            urStack.FirstPush(MainTextBox.Text);
+            urStack.FirstPush(ref MainTextBox);
             undoToolStripMenuItem.Enabled = false;
             redoToolStripMenuItem.Enabled = false;
         }
@@ -61,8 +68,9 @@ namespace JNote
                 AddLineNumbers();
             }
 
-            urStack.Push(MainTextBox.Text);
+            urStack.Push(ref MainTextBox, cursorPos);
 
+            // button toggles
             undoToolStripMenuItem.Enabled = urStack.UndoCount > 1;
             redoToolStripMenuItem.Enabled = urStack.RedoCount > 0;
 
@@ -88,7 +96,7 @@ namespace JNote
             //undoToolStripMenuItem.Enabled = false;
             //redoToolStripMenuItem.Enabled = true;
 
-            MainTextBox.Text = urStack.Undo(MainTextBox.Text);
+            MainTextBox.Text = urStack.Undo(MainTextBox.Text, ref cursorPos);
         }
 
         private void redoToolStripMenuItem_Click(object sender, EventArgs e)
@@ -98,7 +106,7 @@ namespace JNote
             //undoToolStripMenuItem.Enabled = true;
             //redoToolStripMenuItem.Enabled = false;
 
-            MainTextBox.Text = urStack.Redo(MainTextBox.Text);
+            MainTextBox.Text = urStack.Redo(MainTextBox.Text, ref cursorPos);
         }
 
         private void cutToolStripMenuItem_Click(object sender, EventArgs e)
@@ -229,7 +237,7 @@ namespace JNote
         {
             OpenFileDialog ofd = new OpenFileDialog();
             ofd.Filter = "Text files (.txt)|*.txt";
-            ofd.Title = "Open a file...";
+            ofd.Title = "Open a file";
 
             if (ofd.ShowDialog() == DialogResult.OK)
             {
@@ -247,7 +255,7 @@ namespace JNote
             {
                 SaveFileDialog sfd = new SaveFileDialog();
                 sfd.Filter = "Text files (.txt)|*.txt";
-                sfd.Title = "Save the file...";
+                sfd.Title = "Save the file";
 
                 if (sfd.ShowDialog() == DialogResult.OK)
                 {
@@ -270,7 +278,7 @@ namespace JNote
         {
             SaveFileDialog sfd = new SaveFileDialog();
             sfd.Filter = "All files (.*)|*.*";
-            sfd.Title = "Save the file as...";
+            sfd.Title = "Save the file as";
 
             if (sfd.ShowDialog() == DialogResult.OK)
             {
@@ -314,13 +322,13 @@ namespace JNote
         // undo button
         private void toolStripButton9_Click(object sender, EventArgs e)
         {
-            MainTextBox.Text = urStack.Undo(MainTextBox.Text);
+            MainTextBox.Text = urStack.Undo(MainTextBox.Text, ref cursorPos);
         }
 
         // redo button
         private void toolStripButton10_Click(object sender, EventArgs e)
         {
-            MainTextBox.Text = urStack.Redo(MainTextBox.Text);
+            MainTextBox.Text = urStack.Redo(MainTextBox.Text, ref cursorPos);
         }
 
         public void AddLineNumbers()
