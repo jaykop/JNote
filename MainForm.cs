@@ -202,5 +202,110 @@ namespace JNote
         {
 
         }
+
+        // new file button
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            MainTextBox.Clear();
+        }
+
+        // open file button
+        private void toolStripButton4_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog ofd = new OpenFileDialog();
+            ofd.Filter = "Text files (.txt)|*.txt";
+            ofd.Title = "Open a file...";
+
+            if (ofd.ShowDialog() == DialogResult.OK)
+            {
+                System.IO.StreamReader sr = new System.IO.StreamReader(ofd.FileName);
+                MainTextBox.Text = sr.ReadToEnd();
+                this.Text = "JNote - " + ofd.FileName;
+                sr.Close();
+            }
+        }
+
+        // save button
+        private void toolStripButton2_Click(object sender, EventArgs e)
+        {
+            if (this.Text == "JNote - New")
+            {
+                SaveFileDialog sfd = new SaveFileDialog();
+                sfd.Filter = "Text files (.txt)|*.txt";
+                sfd.Title = "Save the file...";
+
+                if (sfd.ShowDialog() == DialogResult.OK)
+                {
+                    System.IO.StreamWriter sw = new System.IO.StreamWriter(sfd.FileName);
+                    sw.Write(MainTextBox.Text);
+                    this.Text = "JNote - " + sfd.FileName;
+                    sw.Close();
+                }
+            }
+            else
+            {
+                System.IO.StreamWriter sw = new System.IO.StreamWriter(MainMenuStrip.Name);
+                sw.Write(MainTextBox.Text);
+                sw.Close();
+            }
+        }
+
+        // save as button
+        private void toolStripButton3_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog sfd = new SaveFileDialog();
+            sfd.Filter = "All files (.*)|*.*";
+            sfd.Title = "Save the file as...";
+
+            if (sfd.ShowDialog() == DialogResult.OK)
+            {
+                System.IO.StreamWriter sw = new System.IO.StreamWriter(sfd.FileName);
+                sw.Write(MainTextBox.Text);
+                this.Text = "JNote - " + sfd.FileName;
+                sw.Close();
+            }
+        }
+
+        // cut button
+        private void toolStripButton14_Click(object sender, EventArgs e)
+        {
+            MainTextBox.Cut();
+        }
+
+        // copy button
+        private void toolStripButton15_Click(object sender, EventArgs e)
+        {
+            MainTextBox.Copy();
+        }
+
+        // paste button
+        private void toolStripButton16_Click(object sender, EventArgs e)
+        {
+            MainTextBox.Paste();
+        }
+
+        // find button
+        private void toolStripButton7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        // replcae button
+        private void toolStripButton8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        // undo button
+        private void toolStripButton9_Click(object sender, EventArgs e)
+        {
+            MainTextBox.Text = urStack.Undo(MainTextBox.Text);
+        }
+
+        // redo button
+        private void toolStripButton10_Click(object sender, EventArgs e)
+        {
+            MainTextBox.Text = urStack.Redo(MainTextBox.Text);
+        }
     }
 }

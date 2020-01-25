@@ -2,7 +2,7 @@
 Custom text editor using C#
 
 # Todolist
-1. Better undo/redo
+1. Better undo/redo - done
 2. Tab
 3. Projects Manager
 4. Better UI
