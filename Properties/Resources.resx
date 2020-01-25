@@ -127,8 +127,8 @@
   <data name="edit-tools (2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\edit-tools (2).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="edit-tools (1)1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\edit-tools (1)1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="edit-tools (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\edit-tools (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icons8-preview-pane-24" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-preview-pane-24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
