@@ -77,29 +77,29 @@ namespace JNote
             ofd.Title = "Open a file...";
             string filename = null;
 
-            // new text boxes for content and line numbers
-            RichTextBoxEx rtb = new RichTextBoxEx();
-
             if (ofd.ShowDialog() == DialogResult.OK)
             {
+                // new text boxes for content and line numbers
+                RichTextBoxEx rtb = new RichTextBoxEx();
+
                 System.IO.StreamReader sr = new System.IO.StreamReader(ofd.FileName);
                 filename = Path.GetFileName(ofd.FileName);
                 rtb.Text = sr.ReadToEnd();
                 this.Text = "JNote - " + ofd.FileName;
                 sr.Close();
+
+                // genate a new tab page
+                TabPage tp = new TabPage(filename);
+                tp.BackColor = Color.Black;
+                tp.ForeColor = Color.White;
+
+                tp.Controls.Add(rtb);
+                tp.Controls.Add(rtb.ln_txtbbox);
+                tabControl.Controls.Add(tp);
+                tabControl.SelectedTab = tp;
+
+                cursorPos = GetRichTextBox().SelectionStart;
             }
-
-            // genate a new tab page
-            TabPage tp = new TabPage(filename);
-            tp.BackColor = Color.Black;
-            tp.ForeColor = Color.White;
-
-            tp.Controls.Add(rtb);
-            tp.Controls.Add(rtb.ln_txtbbox);
-            tabControl.Controls.Add(tp);
-            tabControl.SelectedTab = tp;
-
-            cursorPos = GetRichTextBox().SelectionStart;
         }
 
         private void openToolStripMenuItem_Click(object sender, EventArgs e) { openFile(); }
