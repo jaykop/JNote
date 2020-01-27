@@ -47,7 +47,6 @@
             this.undoButton = new System.Windows.Forms.ToolStripButton();
             this.redoButton = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
-            this.lineNumberTextBox = new System.Windows.Forms.RichTextBox();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
@@ -102,9 +101,9 @@
             this.undoButton,
             this.redoButton,
             this.toolStripSeparator7});
-            this.toolStrip.Location = new System.Drawing.Point(0, 28);
+            this.toolStrip.Location = new System.Drawing.Point(0, 30);
             this.toolStrip.Name = "toolStrip";
-            this.toolStrip.Size = new System.Drawing.Size(800, 27);
+            this.toolStrip.Size = new System.Drawing.Size(800, 31);
             this.toolStrip.TabIndex = 3;
             this.toolStrip.Text = "ToolStrip";
             // 
@@ -114,7 +113,7 @@
             this.newFileButton.Image = global::JNote.Properties.Resources.icons8_new_copy_30;
             this.newFileButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.newFileButton.Name = "newFileButton";
-            this.newFileButton.Size = new System.Drawing.Size(29, 24);
+            this.newFileButton.Size = new System.Drawing.Size(29, 28);
             this.newFileButton.Text = "New";
             this.newFileButton.Click += new System.EventHandler(this.newFileButton_Click);
             // 
@@ -124,7 +123,7 @@
             this.openFileButton.Image = global::JNote.Properties.Resources.icons8_opened_folder_24;
             this.openFileButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.openFileButton.Name = "openFileButton";
-            this.openFileButton.Size = new System.Drawing.Size(29, 24);
+            this.openFileButton.Size = new System.Drawing.Size(29, 28);
             this.openFileButton.Text = "Open";
             this.openFileButton.Click += new System.EventHandler(this.openFileButton_Click);
             // 
@@ -134,7 +133,7 @@
             this.saveButton.Image = global::JNote.Properties.Resources.icons8_save_30;
             this.saveButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.saveButton.Name = "saveButton";
-            this.saveButton.Size = new System.Drawing.Size(29, 24);
+            this.saveButton.Size = new System.Drawing.Size(29, 28);
             this.saveButton.Text = "Save";
             this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
             // 
@@ -144,7 +143,7 @@
             this.saveAsButton.Image = global::JNote.Properties.Resources.icons8_save_as_30;
             this.saveAsButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.saveAsButton.Name = "saveAsButton";
-            this.saveAsButton.Size = new System.Drawing.Size(29, 24);
+            this.saveAsButton.Size = new System.Drawing.Size(29, 28);
             this.saveAsButton.Text = "Save As";
             this.saveAsButton.Click += new System.EventHandler(this.saveAsButton_Click);
             // 
@@ -154,18 +153,18 @@
             this.toolStripButton5.Image = global::JNote.Properties.Resources.icons8_print_24;
             this.toolStripButton5.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton5.Name = "toolStripButton5";
-            this.toolStripButton5.Size = new System.Drawing.Size(29, 24);
+            this.toolStripButton5.Size = new System.Drawing.Size(29, 28);
             this.toolStripButton5.Text = "Print";
             // 
             // toolStripSeparator5
             // 
             this.toolStripSeparator5.Name = "toolStripSeparator5";
-            this.toolStripSeparator5.Size = new System.Drawing.Size(6, 27);
+            this.toolStripSeparator5.Size = new System.Drawing.Size(6, 31);
             // 
             // toolStripSeparator9
             // 
             this.toolStripSeparator9.Name = "toolStripSeparator9";
-            this.toolStripSeparator9.Size = new System.Drawing.Size(0, 24);
+            this.toolStripSeparator9.Size = new System.Drawing.Size(0, 28);
             // 
             // cutButton
             // 
@@ -173,7 +172,7 @@
             this.cutButton.Image = global::JNote.Properties.Resources.icons8_cut_30;
             this.cutButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.cutButton.Name = "cutButton";
-            this.cutButton.Size = new System.Drawing.Size(29, 24);
+            this.cutButton.Size = new System.Drawing.Size(29, 28);
             this.cutButton.Text = "Cut";
             this.cutButton.Click += new System.EventHandler(this.cutButton_Click);
             // 
@@ -183,7 +182,7 @@
             this.copyButton.Image = global::JNote.Properties.Resources.icons8_copy_30;
             this.copyButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.copyButton.Name = "copyButton";
-            this.copyButton.Size = new System.Drawing.Size(29, 24);
+            this.copyButton.Size = new System.Drawing.Size(29, 28);
             this.copyButton.Text = "Copy";
             this.copyButton.Click += new System.EventHandler(this.copyButton_Click);
             // 
@@ -193,14 +192,14 @@
             this.pasteButton.Image = global::JNote.Properties.Resources.icons8_paste_50;
             this.pasteButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.pasteButton.Name = "pasteButton";
-            this.pasteButton.Size = new System.Drawing.Size(29, 24);
+            this.pasteButton.Size = new System.Drawing.Size(29, 28);
             this.pasteButton.Text = "Paste";
             this.pasteButton.Click += new System.EventHandler(this.pasteButton_Click);
             // 
             // toolStripSeparator8
             // 
             this.toolStripSeparator8.Name = "toolStripSeparator8";
-            this.toolStripSeparator8.Size = new System.Drawing.Size(6, 27);
+            this.toolStripSeparator8.Size = new System.Drawing.Size(6, 31);
             // 
             // findButton
             // 
@@ -208,7 +207,7 @@
             this.findButton.Image = global::JNote.Properties.Resources.icons8_search_50;
             this.findButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.findButton.Name = "findButton";
-            this.findButton.Size = new System.Drawing.Size(29, 24);
+            this.findButton.Size = new System.Drawing.Size(29, 28);
             this.findButton.Text = "Find";
             this.findButton.Click += new System.EventHandler(this.findButton_Click);
             // 
@@ -218,14 +217,14 @@
             this.replaceButton.Image = global::JNote.Properties.Resources.find__1_;
             this.replaceButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.replaceButton.Name = "replaceButton";
-            this.replaceButton.Size = new System.Drawing.Size(29, 24);
+            this.replaceButton.Size = new System.Drawing.Size(29, 28);
             this.replaceButton.Text = "Replace";
             this.replaceButton.Click += new System.EventHandler(this.replaceButton_Click);
             // 
             // toolStripSeparator6
             // 
             this.toolStripSeparator6.Name = "toolStripSeparator6";
-            this.toolStripSeparator6.Size = new System.Drawing.Size(6, 27);
+            this.toolStripSeparator6.Size = new System.Drawing.Size(6, 31);
             // 
             // undoButton
             // 
@@ -233,7 +232,7 @@
             this.undoButton.Image = global::JNote.Properties.Resources.icons8_undo_24;
             this.undoButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.undoButton.Name = "undoButton";
-            this.undoButton.Size = new System.Drawing.Size(29, 24);
+            this.undoButton.Size = new System.Drawing.Size(29, 28);
             this.undoButton.Text = "Undo";
             this.undoButton.Click += new System.EventHandler(this.undoButton_Click);
             // 
@@ -243,31 +242,14 @@
             this.redoButton.Image = global::JNote.Properties.Resources.icons8_redo_24;
             this.redoButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.redoButton.Name = "redoButton";
-            this.redoButton.Size = new System.Drawing.Size(29, 24);
+            this.redoButton.Size = new System.Drawing.Size(29, 28);
             this.redoButton.Text = "Redo";
             this.redoButton.Click += new System.EventHandler(this.redoButton_Click);
             // 
             // toolStripSeparator7
             // 
             this.toolStripSeparator7.Name = "toolStripSeparator7";
-            this.toolStripSeparator7.Size = new System.Drawing.Size(6, 27);
-            // 
-            // lineNumberTextBox
-            // 
-            this.lineNumberTextBox.BackColor = System.Drawing.Color.Black;
-            this.lineNumberTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.lineNumberTextBox.Cursor = System.Windows.Forms.Cursors.PanNE;
-            this.lineNumberTextBox.Dock = System.Windows.Forms.DockStyle.Left;
-            this.lineNumberTextBox.Font = new System.Drawing.Font("Calibri", 1F);
-            this.lineNumberTextBox.ForeColor = System.Drawing.Color.White;
-            this.lineNumberTextBox.Location = new System.Drawing.Point(0, 55);
-            this.lineNumberTextBox.Name = "lineNumberTextBox";
-            this.lineNumberTextBox.ReadOnly = true;
-            this.lineNumberTextBox.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
-            this.lineNumberTextBox.Size = new System.Drawing.Size(21, 485);
-            this.lineNumberTextBox.TabIndex = 4;
-            this.lineNumberTextBox.Text = "";
-            this.lineNumberTextBox.MouseDown += new System.Windows.Forms.MouseEventHandler(this.lineNumberTextBox_MouseDown);
+            this.toolStripSeparator7.Size = new System.Drawing.Size(6, 31);
             // 
             // fileToolStripMenuItem
             // 
@@ -282,7 +264,7 @@
             this.exitToolStripMenuItem});
             this.fileToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(46, 24);
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(46, 26);
             this.fileToolStripMenuItem.Text = "&File";
             // 
             // newToolStripMenuItem
@@ -364,7 +346,7 @@
             this.dateTimeToolStripMenuItem});
             this.editToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
-            this.editToolStripMenuItem.Size = new System.Drawing.Size(49, 24);
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(49, 26);
             this.editToolStripMenuItem.Text = "&Edit";
             // 
             // undoToolStripMenuItem
@@ -456,7 +438,7 @@
             // 
             this.viewToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.viewToolStripMenuItem.Name = "viewToolStripMenuItem";
-            this.viewToolStripMenuItem.Size = new System.Drawing.Size(56, 24);
+            this.viewToolStripMenuItem.Size = new System.Drawing.Size(56, 26);
             this.viewToolStripMenuItem.Text = "&View";
             // 
             // findToolStripMenuItem1
@@ -466,7 +448,7 @@
             this.replaceToolStripMenuItem});
             this.findToolStripMenuItem1.ForeColor = System.Drawing.Color.White;
             this.findToolStripMenuItem1.Name = "findToolStripMenuItem1";
-            this.findToolStripMenuItem1.Size = new System.Drawing.Size(52, 24);
+            this.findToolStripMenuItem1.Size = new System.Drawing.Size(52, 26);
             this.findToolStripMenuItem1.Text = "&Find";
             // 
             // findToolStripMenuItem
@@ -491,7 +473,7 @@
             this.aboutJnoteToolStripMenuItem});
             this.helpToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(55, 24);
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(55, 26);
             this.helpToolStripMenuItem.Text = "&Help";
             // 
             // aboutJnoteToolStripMenuItem
@@ -515,26 +497,26 @@
             this.helpToolStripMenuItem});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
-            this.menuStrip.Size = new System.Drawing.Size(800, 28);
+            this.menuStrip.Size = new System.Drawing.Size(800, 30);
             this.menuStrip.TabIndex = 1;
             this.menuStrip.Text = "MenuStrip";
             // 
             // tabControl
             // 
             this.tabControl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControl.Location = new System.Drawing.Point(21, 55);
+            this.tabControl.Location = new System.Drawing.Point(0, 61);
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
-            this.tabControl.Size = new System.Drawing.Size(779, 485);
+            this.tabControl.Size = new System.Drawing.Size(800, 479);
             this.tabControl.TabIndex = 6;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(800, 540);
             this.Controls.Add(this.tabControl);
-            this.Controls.Add(this.lineNumberTextBox);
             this.Controls.Add(this.toolStrip);
             this.Controls.Add(this.menuStrip);
             this.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -573,7 +555,6 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator8;
         private System.Windows.Forms.ToolStripButton copyButton;
         private System.Windows.Forms.ToolStripButton pasteButton;
-        private System.Windows.Forms.RichTextBox lineNumberTextBox;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem newToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
