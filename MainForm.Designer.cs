@@ -29,8 +29,25 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            this.MainTextBox = new System.Windows.Forms.RichTextBox();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.toolStrip = new System.Windows.Forms.ToolStrip();
+            this.newFileButton = new System.Windows.Forms.ToolStripButton();
+            this.openFileButton = new System.Windows.Forms.ToolStripButton();
+            this.saveButton = new System.Windows.Forms.ToolStripButton();
+            this.saveAsButton = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator9 = new System.Windows.Forms.ToolStripLabel();
+            this.cutButton = new System.Windows.Forms.ToolStripButton();
+            this.copyButton = new System.Windows.Forms.ToolStripButton();
+            this.pasteButton = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
+            this.findButton = new System.Windows.Forms.ToolStripButton();
+            this.replaceButton = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
+            this.undoButton = new System.Windows.Forms.ToolStripButton();
+            this.redoButton = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
+            this.lineNumberTextBox = new System.Windows.Forms.RichTextBox();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
@@ -57,62 +74,200 @@
             this.replaceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutJnoteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripSeparator9 = new System.Windows.Forms.ToolStripLabel();
-            this.toolStripButton14 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton15 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton16 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButton7 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton8 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButton9 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton10 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
-            this.LineNumberTextBox = new System.Windows.Forms.RichTextBox();
-            this.menuStrip1.SuspendLayout();
-            this.toolStrip1.SuspendLayout();
+            this.menuStrip = new System.Windows.Forms.MenuStrip();
+            this.tabControl = new System.Windows.Forms.TabControl();
+            this.toolStrip.SuspendLayout();
+            this.menuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
-            // MainTextBox
+            // toolStrip
             // 
-            this.MainTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(16)))), ((int)(((byte)(16)))));
-            this.MainTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.MainTextBox.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MainTextBox.ForeColor = System.Drawing.Color.White;
-            this.MainTextBox.Location = new System.Drawing.Point(21, 61);
-            this.MainTextBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.MainTextBox.Name = "MainTextBox";
-            this.MainTextBox.Size = new System.Drawing.Size(779, 479);
-            this.MainTextBox.TabIndex = 0;
-            this.MainTextBox.Text = "";
-            this.MainTextBox.SelectionChanged += new System.EventHandler(this.MainTextBox_SelectionChanged);
-            this.MainTextBox.VScroll += new System.EventHandler(this.MainTextBox_VScroll);
-            this.MainTextBox.FontChanged += new System.EventHandler(this.MainTextBox_FontChanged);
-            this.MainTextBox.TextChanged += new System.EventHandler(this.MainTextBox_TextChanged);
+            this.toolStrip.BackColor = System.Drawing.Color.Black;
+            this.toolStrip.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.toolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.newFileButton,
+            this.openFileButton,
+            this.saveButton,
+            this.saveAsButton,
+            this.toolStripButton5,
+            this.toolStripSeparator5,
+            this.toolStripSeparator9,
+            this.cutButton,
+            this.copyButton,
+            this.pasteButton,
+            this.toolStripSeparator8,
+            this.findButton,
+            this.replaceButton,
+            this.toolStripSeparator6,
+            this.undoButton,
+            this.redoButton,
+            this.toolStripSeparator7});
+            this.toolStrip.Location = new System.Drawing.Point(0, 28);
+            this.toolStrip.Name = "toolStrip";
+            this.toolStrip.Size = new System.Drawing.Size(800, 27);
+            this.toolStrip.TabIndex = 3;
+            this.toolStrip.Text = "ToolStrip";
             // 
-            // menuStrip1
+            // newFileButton
             // 
-            this.menuStrip1.BackColor = System.Drawing.Color.Black;
-            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fileToolStripMenuItem,
-            this.editToolStripMenuItem,
-            this.viewToolStripMenuItem,
-            this.findToolStripMenuItem1,
-            this.helpToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(800, 30);
-            this.menuStrip1.TabIndex = 1;
-            this.menuStrip1.Text = "MenuStrip";
-            this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
+            this.newFileButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.newFileButton.Image = global::JNote.Properties.Resources.icons8_new_copy_30;
+            this.newFileButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.newFileButton.Name = "newFileButton";
+            this.newFileButton.Size = new System.Drawing.Size(29, 24);
+            this.newFileButton.Text = "New";
+            this.newFileButton.Click += new System.EventHandler(this.newFileButton_Click);
+            // 
+            // openFileButton
+            // 
+            this.openFileButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.openFileButton.Image = global::JNote.Properties.Resources.icons8_opened_folder_24;
+            this.openFileButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.openFileButton.Name = "openFileButton";
+            this.openFileButton.Size = new System.Drawing.Size(29, 24);
+            this.openFileButton.Text = "Open";
+            this.openFileButton.Click += new System.EventHandler(this.openFileButton_Click);
+            // 
+            // saveButton
+            // 
+            this.saveButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.saveButton.Image = global::JNote.Properties.Resources.icons8_save_30;
+            this.saveButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.saveButton.Name = "saveButton";
+            this.saveButton.Size = new System.Drawing.Size(29, 24);
+            this.saveButton.Text = "Save";
+            this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
+            // 
+            // saveAsButton
+            // 
+            this.saveAsButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.saveAsButton.Image = global::JNote.Properties.Resources.icons8_save_as_30;
+            this.saveAsButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.saveAsButton.Name = "saveAsButton";
+            this.saveAsButton.Size = new System.Drawing.Size(29, 24);
+            this.saveAsButton.Text = "Save As";
+            this.saveAsButton.Click += new System.EventHandler(this.saveAsButton_Click);
+            // 
+            // toolStripButton5
+            // 
+            this.toolStripButton5.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton5.Image = global::JNote.Properties.Resources.icons8_print_24;
+            this.toolStripButton5.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton5.Name = "toolStripButton5";
+            this.toolStripButton5.Size = new System.Drawing.Size(29, 24);
+            this.toolStripButton5.Text = "Print";
+            // 
+            // toolStripSeparator5
+            // 
+            this.toolStripSeparator5.Name = "toolStripSeparator5";
+            this.toolStripSeparator5.Size = new System.Drawing.Size(6, 27);
+            // 
+            // toolStripSeparator9
+            // 
+            this.toolStripSeparator9.Name = "toolStripSeparator9";
+            this.toolStripSeparator9.Size = new System.Drawing.Size(0, 24);
+            // 
+            // cutButton
+            // 
+            this.cutButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.cutButton.Image = global::JNote.Properties.Resources.icons8_cut_30;
+            this.cutButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.cutButton.Name = "cutButton";
+            this.cutButton.Size = new System.Drawing.Size(29, 24);
+            this.cutButton.Text = "Cut";
+            this.cutButton.Click += new System.EventHandler(this.cutButton_Click);
+            // 
+            // copyButton
+            // 
+            this.copyButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.copyButton.Image = global::JNote.Properties.Resources.icons8_copy_30;
+            this.copyButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.copyButton.Name = "copyButton";
+            this.copyButton.Size = new System.Drawing.Size(29, 24);
+            this.copyButton.Text = "Copy";
+            this.copyButton.Click += new System.EventHandler(this.copyButton_Click);
+            // 
+            // pasteButton
+            // 
+            this.pasteButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.pasteButton.Image = global::JNote.Properties.Resources.icons8_paste_50;
+            this.pasteButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.pasteButton.Name = "pasteButton";
+            this.pasteButton.Size = new System.Drawing.Size(29, 24);
+            this.pasteButton.Text = "Paste";
+            this.pasteButton.Click += new System.EventHandler(this.pasteButton_Click);
+            // 
+            // toolStripSeparator8
+            // 
+            this.toolStripSeparator8.Name = "toolStripSeparator8";
+            this.toolStripSeparator8.Size = new System.Drawing.Size(6, 27);
+            // 
+            // findButton
+            // 
+            this.findButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.findButton.Image = global::JNote.Properties.Resources.icons8_search_50;
+            this.findButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.findButton.Name = "findButton";
+            this.findButton.Size = new System.Drawing.Size(29, 24);
+            this.findButton.Text = "Find";
+            this.findButton.Click += new System.EventHandler(this.findButton_Click);
+            // 
+            // replaceButton
+            // 
+            this.replaceButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.replaceButton.Image = global::JNote.Properties.Resources.find__1_;
+            this.replaceButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.replaceButton.Name = "replaceButton";
+            this.replaceButton.Size = new System.Drawing.Size(29, 24);
+            this.replaceButton.Text = "Replace";
+            this.replaceButton.Click += new System.EventHandler(this.replaceButton_Click);
+            // 
+            // toolStripSeparator6
+            // 
+            this.toolStripSeparator6.Name = "toolStripSeparator6";
+            this.toolStripSeparator6.Size = new System.Drawing.Size(6, 27);
+            // 
+            // undoButton
+            // 
+            this.undoButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.undoButton.Image = global::JNote.Properties.Resources.icons8_undo_24;
+            this.undoButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.undoButton.Name = "undoButton";
+            this.undoButton.Size = new System.Drawing.Size(29, 24);
+            this.undoButton.Text = "Undo";
+            this.undoButton.Click += new System.EventHandler(this.undoButton_Click);
+            // 
+            // redoButton
+            // 
+            this.redoButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.redoButton.Image = global::JNote.Properties.Resources.icons8_redo_24;
+            this.redoButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.redoButton.Name = "redoButton";
+            this.redoButton.Size = new System.Drawing.Size(29, 24);
+            this.redoButton.Text = "Redo";
+            this.redoButton.Click += new System.EventHandler(this.redoButton_Click);
+            // 
+            // toolStripSeparator7
+            // 
+            this.toolStripSeparator7.Name = "toolStripSeparator7";
+            this.toolStripSeparator7.Size = new System.Drawing.Size(6, 27);
+            // 
+            // lineNumberTextBox
+            // 
+            this.lineNumberTextBox.BackColor = System.Drawing.Color.Black;
+            this.lineNumberTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.lineNumberTextBox.Cursor = System.Windows.Forms.Cursors.PanNE;
+            this.lineNumberTextBox.Dock = System.Windows.Forms.DockStyle.Left;
+            this.lineNumberTextBox.Font = new System.Drawing.Font("Calibri", 1F);
+            this.lineNumberTextBox.ForeColor = System.Drawing.Color.White;
+            this.lineNumberTextBox.Location = new System.Drawing.Point(0, 55);
+            this.lineNumberTextBox.Name = "lineNumberTextBox";
+            this.lineNumberTextBox.ReadOnly = true;
+            this.lineNumberTextBox.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
+            this.lineNumberTextBox.Size = new System.Drawing.Size(21, 485);
+            this.lineNumberTextBox.TabIndex = 4;
+            this.lineNumberTextBox.Text = "";
+            this.lineNumberTextBox.MouseDown += new System.Windows.Forms.MouseEventHandler(this.lineNumberTextBox_MouseDown);
             // 
             // fileToolStripMenuItem
             // 
@@ -127,7 +282,7 @@
             this.exitToolStripMenuItem});
             this.fileToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(46, 26);
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(46, 24);
             this.fileToolStripMenuItem.Text = "&File";
             // 
             // newToolStripMenuItem
@@ -209,7 +364,7 @@
             this.dateTimeToolStripMenuItem});
             this.editToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
-            this.editToolStripMenuItem.Size = new System.Drawing.Size(49, 26);
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(49, 24);
             this.editToolStripMenuItem.Text = "&Edit";
             // 
             // undoToolStripMenuItem
@@ -301,7 +456,7 @@
             // 
             this.viewToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.viewToolStripMenuItem.Name = "viewToolStripMenuItem";
-            this.viewToolStripMenuItem.Size = new System.Drawing.Size(56, 26);
+            this.viewToolStripMenuItem.Size = new System.Drawing.Size(56, 24);
             this.viewToolStripMenuItem.Text = "&View";
             // 
             // findToolStripMenuItem1
@@ -311,7 +466,7 @@
             this.replaceToolStripMenuItem});
             this.findToolStripMenuItem1.ForeColor = System.Drawing.Color.White;
             this.findToolStripMenuItem1.Name = "findToolStripMenuItem1";
-            this.findToolStripMenuItem1.Size = new System.Drawing.Size(52, 26);
+            this.findToolStripMenuItem1.Size = new System.Drawing.Size(52, 24);
             this.findToolStripMenuItem1.Text = "&Find";
             // 
             // findToolStripMenuItem
@@ -336,9 +491,8 @@
             this.aboutJnoteToolStripMenuItem});
             this.helpToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(55, 26);
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(55, 24);
             this.helpToolStripMenuItem.Text = "&Help";
-            this.helpToolStripMenuItem.Click += new System.EventHandler(this.helpToolStripMenuItem_Click);
             // 
             // aboutJnoteToolStripMenuItem
             // 
@@ -349,271 +503,105 @@
             this.aboutJnoteToolStripMenuItem.Text = "About Jnote";
             this.aboutJnoteToolStripMenuItem.Click += new System.EventHandler(this.aboutJnoteToolStripMenuItem_Click);
             // 
-            // toolStrip1
+            // menuStrip
             // 
-            this.toolStrip1.BackColor = System.Drawing.Color.Black;
-            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripButton1,
-            this.toolStripButton4,
-            this.toolStripButton2,
-            this.toolStripButton3,
-            this.toolStripButton5,
-            this.toolStripSeparator5,
-            this.toolStripSeparator9,
-            this.toolStripButton14,
-            this.toolStripButton15,
-            this.toolStripButton16,
-            this.toolStripSeparator8,
-            this.toolStripButton7,
-            this.toolStripButton8,
-            this.toolStripSeparator6,
-            this.toolStripButton9,
-            this.toolStripButton10,
-            this.toolStripSeparator7});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 30);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(800, 31);
-            this.toolStrip1.TabIndex = 3;
-            this.toolStrip1.Text = "ToolStrip";
+            this.menuStrip.BackColor = System.Drawing.Color.Black;
+            this.menuStrip.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.fileToolStripMenuItem,
+            this.editToolStripMenuItem,
+            this.viewToolStripMenuItem,
+            this.findToolStripMenuItem1,
+            this.helpToolStripMenuItem});
+            this.menuStrip.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip.Name = "menuStrip";
+            this.menuStrip.Size = new System.Drawing.Size(800, 28);
+            this.menuStrip.TabIndex = 1;
+            this.menuStrip.Text = "MenuStrip";
             // 
-            // toolStripButton1
+            // tabControl
             // 
-            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton1.Image = global::JNote.Properties.Resources.icons8_new_copy_30;
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(29, 28);
-            this.toolStripButton1.Text = "New";
-            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
-            // 
-            // toolStripButton4
-            // 
-            this.toolStripButton4.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton4.Image = global::JNote.Properties.Resources.icons8_opened_folder_24;
-            this.toolStripButton4.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton4.Name = "toolStripButton4";
-            this.toolStripButton4.Size = new System.Drawing.Size(29, 28);
-            this.toolStripButton4.Text = "Open";
-            this.toolStripButton4.Click += new System.EventHandler(this.toolStripButton4_Click);
-            // 
-            // toolStripButton2
-            // 
-            this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton2.Image = global::JNote.Properties.Resources.icons8_save_30;
-            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Size = new System.Drawing.Size(29, 28);
-            this.toolStripButton2.Text = "Save";
-            this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
-            // 
-            // toolStripButton3
-            // 
-            this.toolStripButton3.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton3.Image = global::JNote.Properties.Resources.icons8_save_as_30;
-            this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton3.Name = "toolStripButton3";
-            this.toolStripButton3.Size = new System.Drawing.Size(29, 28);
-            this.toolStripButton3.Text = "Save As";
-            this.toolStripButton3.Click += new System.EventHandler(this.toolStripButton3_Click);
-            // 
-            // toolStripButton5
-            // 
-            this.toolStripButton5.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton5.Image = global::JNote.Properties.Resources.icons8_print_24;
-            this.toolStripButton5.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton5.Name = "toolStripButton5";
-            this.toolStripButton5.Size = new System.Drawing.Size(29, 28);
-            this.toolStripButton5.Text = "Print";
-            // 
-            // toolStripSeparator5
-            // 
-            this.toolStripSeparator5.Name = "toolStripSeparator5";
-            this.toolStripSeparator5.Size = new System.Drawing.Size(6, 31);
-            // 
-            // toolStripSeparator9
-            // 
-            this.toolStripSeparator9.Name = "toolStripSeparator9";
-            this.toolStripSeparator9.Size = new System.Drawing.Size(0, 28);
-            // 
-            // toolStripButton14
-            // 
-            this.toolStripButton14.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton14.Image = global::JNote.Properties.Resources.icons8_cut_30;
-            this.toolStripButton14.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton14.Name = "toolStripButton14";
-            this.toolStripButton14.Size = new System.Drawing.Size(29, 28);
-            this.toolStripButton14.Text = "Cut";
-            this.toolStripButton14.Click += new System.EventHandler(this.toolStripButton14_Click);
-            // 
-            // toolStripButton15
-            // 
-            this.toolStripButton15.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton15.Image = global::JNote.Properties.Resources.icons8_copy_30;
-            this.toolStripButton15.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton15.Name = "toolStripButton15";
-            this.toolStripButton15.Size = new System.Drawing.Size(29, 28);
-            this.toolStripButton15.Text = "Copy";
-            this.toolStripButton15.Click += new System.EventHandler(this.toolStripButton15_Click);
-            // 
-            // toolStripButton16
-            // 
-            this.toolStripButton16.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton16.Image = global::JNote.Properties.Resources.icons8_paste_50;
-            this.toolStripButton16.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton16.Name = "toolStripButton16";
-            this.toolStripButton16.Size = new System.Drawing.Size(29, 28);
-            this.toolStripButton16.Text = "Paste";
-            this.toolStripButton16.Click += new System.EventHandler(this.toolStripButton16_Click);
-            // 
-            // toolStripSeparator8
-            // 
-            this.toolStripSeparator8.Name = "toolStripSeparator8";
-            this.toolStripSeparator8.Size = new System.Drawing.Size(6, 31);
-            // 
-            // toolStripButton7
-            // 
-            this.toolStripButton7.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton7.Image = global::JNote.Properties.Resources.icons8_search_50;
-            this.toolStripButton7.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton7.Name = "toolStripButton7";
-            this.toolStripButton7.Size = new System.Drawing.Size(29, 28);
-            this.toolStripButton7.Text = "Find";
-            this.toolStripButton7.Click += new System.EventHandler(this.toolStripButton7_Click);
-            // 
-            // toolStripButton8
-            // 
-            this.toolStripButton8.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton8.Image = global::JNote.Properties.Resources.find__1_;
-            this.toolStripButton8.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton8.Name = "toolStripButton8";
-            this.toolStripButton8.Size = new System.Drawing.Size(29, 28);
-            this.toolStripButton8.Text = "Replace";
-            this.toolStripButton8.Click += new System.EventHandler(this.toolStripButton8_Click);
-            // 
-            // toolStripSeparator6
-            // 
-            this.toolStripSeparator6.Name = "toolStripSeparator6";
-            this.toolStripSeparator6.Size = new System.Drawing.Size(6, 31);
-            // 
-            // toolStripButton9
-            // 
-            this.toolStripButton9.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton9.Image = global::JNote.Properties.Resources.icons8_undo_24;
-            this.toolStripButton9.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton9.Name = "toolStripButton9";
-            this.toolStripButton9.Size = new System.Drawing.Size(29, 28);
-            this.toolStripButton9.Text = "Undo";
-            this.toolStripButton9.Click += new System.EventHandler(this.toolStripButton9_Click);
-            // 
-            // toolStripButton10
-            // 
-            this.toolStripButton10.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton10.Image = global::JNote.Properties.Resources.icons8_redo_24;
-            this.toolStripButton10.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton10.Name = "toolStripButton10";
-            this.toolStripButton10.Size = new System.Drawing.Size(29, 28);
-            this.toolStripButton10.Text = "Redo";
-            this.toolStripButton10.Click += new System.EventHandler(this.toolStripButton10_Click);
-            // 
-            // toolStripSeparator7
-            // 
-            this.toolStripSeparator7.Name = "toolStripSeparator7";
-            this.toolStripSeparator7.Size = new System.Drawing.Size(6, 31);
-            // 
-            // LineNumberTextBox
-            // 
-            this.LineNumberTextBox.BackColor = System.Drawing.Color.Black;
-            this.LineNumberTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.LineNumberTextBox.Cursor = System.Windows.Forms.Cursors.PanNE;
-            this.LineNumberTextBox.Dock = System.Windows.Forms.DockStyle.Left;
-            this.LineNumberTextBox.Font = new System.Drawing.Font("Calibri", 1F);
-            this.LineNumberTextBox.ForeColor = System.Drawing.Color.White;
-            this.LineNumberTextBox.Location = new System.Drawing.Point(0, 61);
-            this.LineNumberTextBox.Name = "LineNumberTextBox";
-            this.LineNumberTextBox.ReadOnly = true;
-            this.LineNumberTextBox.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
-            this.LineNumberTextBox.Size = new System.Drawing.Size(21, 479);
-            this.LineNumberTextBox.TabIndex = 4;
-            this.LineNumberTextBox.Text = "";
-            this.LineNumberTextBox.TextChanged += new System.EventHandler(this.LineNumberTextBox_TextChanged);
-            this.LineNumberTextBox.MouseDown += new System.Windows.Forms.MouseEventHandler(this.LineNumberTextBox_MouseDown);
+            this.tabControl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControl.Location = new System.Drawing.Point(21, 55);
+            this.tabControl.Name = "tabControl";
+            this.tabControl.SelectedIndex = 0;
+            this.tabControl.Size = new System.Drawing.Size(779, 485);
+            this.tabControl.TabIndex = 6;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 540);
-            this.Controls.Add(this.MainTextBox);
-            this.Controls.Add(this.LineNumberTextBox);
-            this.Controls.Add(this.toolStrip1);
-            this.Controls.Add(this.menuStrip1);
+            this.Controls.Add(this.tabControl);
+            this.Controls.Add(this.lineNumberTextBox);
+            this.Controls.Add(this.toolStrip);
+            this.Controls.Add(this.menuStrip);
             this.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MainMenuStrip = this.menuStrip1;
+            this.MainMenuStrip = this.menuStrip;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "MainForm";
             this.Text = "JNote";
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.Resize += new System.EventHandler(this.MainForm_Resize);
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
-            this.toolStrip1.ResumeLayout(false);
-            this.toolStrip1.PerformLayout();
+            this.toolStrip.ResumeLayout(false);
+            this.toolStrip.PerformLayout();
+            this.menuStrip.ResumeLayout(false);
+            this.menuStrip.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.RichTextBox MainTextBox;
-        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStrip toolStrip;
+        private System.Windows.Forms.ToolStripButton newFileButton;
+        private System.Windows.Forms.ToolStripButton openFileButton;
+        private System.Windows.Forms.ToolStripButton saveButton;
+        private System.Windows.Forms.ToolStripButton saveAsButton;
+        private System.Windows.Forms.ToolStripButton toolStripButton5;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
+        private System.Windows.Forms.ToolStripLabel toolStripSeparator9;
+        private System.Windows.Forms.ToolStripButton findButton;
+        private System.Windows.Forms.ToolStripButton replaceButton;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
+        private System.Windows.Forms.ToolStripButton undoButton;
+        private System.Windows.Forms.ToolStripButton redoButton;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator7;
+        private System.Windows.Forms.ToolStripButton cutButton;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator8;
+        private System.Windows.Forms.ToolStripButton copyButton;
+        private System.Windows.Forms.ToolStripButton pasteButton;
+        private System.Windows.Forms.RichTextBox lineNumberTextBox;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem newToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripMenuItem openToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem saveAsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripMenuItem printToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem undoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem redoToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem selectAllToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem dateTimeToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem aboutJnoteToolStripMenuItem;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
         private System.Windows.Forms.ToolStripMenuItem cutToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem copyToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem pasteToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem deleteToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
-        private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.ToolStripButton toolStripButton1;
-        private System.Windows.Forms.ToolStripButton toolStripButton4;
-        private System.Windows.Forms.ToolStripButton toolStripButton2;
-        private System.Windows.Forms.ToolStripButton toolStripButton3;
-        private System.Windows.Forms.ToolStripButton toolStripButton5;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
-        private System.Windows.Forms.ToolStripLabel toolStripSeparator9;
-        private System.Windows.Forms.ToolStripButton toolStripButton7;
-        private System.Windows.Forms.ToolStripButton toolStripButton8;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
-        private System.Windows.Forms.ToolStripButton toolStripButton9;
-        private System.Windows.Forms.ToolStripButton toolStripButton10;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator7;
-        private System.Windows.Forms.ToolStripButton toolStripButton14;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator8;
-        private System.Windows.Forms.ToolStripButton toolStripButton15;
-        private System.Windows.Forms.ToolStripButton toolStripButton16;
+        private System.Windows.Forms.ToolStripMenuItem selectAllToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem dateTimeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem viewToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem findToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem findToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem replaceToolStripMenuItem;
-        private System.Windows.Forms.RichTextBox LineNumberTextBox;
-        private System.Windows.Forms.ToolStripMenuItem viewToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem aboutJnoteToolStripMenuItem;
+        private System.Windows.Forms.MenuStrip menuStrip;
+        private System.Windows.Forms.TabControl tabControl;
     }
 }
 
